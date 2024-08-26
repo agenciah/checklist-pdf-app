@@ -1,0 +1,33 @@
+.checklist-form {
+    display: flex;
+    flex-direction: column;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+  
+  .checklist-form h2 {
+    text-align: center;
+  }
+  
+  .checklist-form div {
+    margin: 10px 0;
+  }
+  
+  .checklist-form textarea {
+    margin-top: 15px;
+    height: 100px;
+  }
+  
+  .checklist-form button {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .checklist-form button:hover {
+    background-color: #0056b3;
+  }
+  
