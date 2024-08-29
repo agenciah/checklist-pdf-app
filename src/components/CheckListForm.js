@@ -3,7 +3,8 @@ import ChecklistSection from './CheckListSection';
 import CommentsSection from './CommentsSection';
 import PDFGeneration from './PDFGeneration';
 import { Box, Button, Typography } from '@mui/material';
-import logo from '../images/Residentia Logo without name.png'
+
+import ImageCropDialog from './Crop/ImageCropDialog';
 
 function ChecklistForm() {
   const initialChecklistData = {
@@ -16,6 +17,8 @@ function ChecklistForm() {
 
   const [checklistData, setChecklistData] = useState(initialChecklistData);
   const [images, setImages] = useState([null, null, null]);
+  const [imageToCrop, setImageToCrop] = useState(null);
+  const [croppingIndex, setCroppingIndex] = useState(null);
 
   useEffect(() => {
     const savedData = JSON.parse(localStorage.getItem('checklistData'));
@@ -42,12 +45,18 @@ function ChecklistForm() {
     if (file) {
       const reader = new FileReader();
       reader.onload = (event) => {
-        const newImages = [...images];
-        newImages[index] = event.target.result;
-        setImages(newImages);
+        setImageToCrop(event.target.result);
+        setCroppingIndex(index);
       };
       reader.readAsDataURL(file);
     }
+  };
+
+  const handleCropComplete = (croppedImage) => {
+    const newImages = [...images];
+    newImages[croppingIndex] = croppedImage;
+    setImages(newImages);
+    setImageToCrop(null);
   };
 
   const handleSaveToLocalStorage = () => {
@@ -56,8 +65,16 @@ function ChecklistForm() {
   };
 
   return (
-    <Box sx={{ maxWidth: 600, mx: 'auto', mt: 4, p: 3, border: '1px solid #ddd', borderRadius: 2 }}>
-      <Typography variant="h4" gutterBottom>
+    <Box sx={{ 
+      backgroundColor: 'white',
+      padding: 3,
+      borderRadius: 2,
+      boxShadow: 3,
+      display: 'flex',
+      flexDirection: 'column',
+      gap: 2, }}
+      >
+      <Typography variant="h5" sx={{ color: 'rgb(1, 98, 153)', marginBottom: 2 }}>
         Checklist de Supervisión
       </Typography>
 
@@ -85,7 +102,7 @@ function ChecklistForm() {
         handleInputChange={handleInputChange}
       />
 
-<ChecklistSection
+      <ChecklistSection
         title="Jardineria"
         fields={['areasComunes', 'exteriores', 'areaPrincipal']}
         area="jardineria"
@@ -102,6 +119,14 @@ function ChecklistForm() {
         ))}
       </Box>
 
+      {imageToCrop && (
+        <ImageCropDialog
+          imageSrc={imageToCrop}
+          onCropComplete={handleCropComplete}
+          onClose={() => setImageToCrop(null)}
+        />
+      )}
+
       <CommentsSection
         comments={checklistData.comentarios}
         handleComentariosChange={handleComentariosChange}
@@ -111,7 +136,11 @@ function ChecklistForm() {
         variant="contained" 
         color="primary" 
         onClick={handleSaveToLocalStorage}
-        sx={{ marginTop: 2 }}
+        sx={{
+          backgroundColor: 'rgb(38, 169, 225)',
+          '&:hover': { backgroundColor: 'rgb(1, 98, 153)' },
+          color: 'white',
+        }}
       >
         Guardar Checklist
       </Button>

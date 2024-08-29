@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/checklist-pdf-app/build/static/css/main.e6c13ad2.css",
-    "main.js": "/checklist-pdf-app/build/static/js/main.8c9a6918.js",
+    "main.js": "/checklist-pdf-app/build/static/js/main.ec6df2a9.js",
     "static/js/239.8973554e.chunk.js": "/checklist-pdf-app/build/static/js/239.8973554e.chunk.js",
     "static/js/213.a2f9cb97.chunk.js": "/checklist-pdf-app/build/static/js/213.a2f9cb97.chunk.js",
     "static/js/732.58fd25de.chunk.js": "/checklist-pdf-app/build/static/js/732.58fd25de.chunk.js",
@@ -10,7 +10,7 @@
     "static/media/Diapositiva2.JPG": "/checklist-pdf-app/build/static/media/Diapositiva2.32389f3a15ebcaefdb99.JPG",
     "index.html": "/checklist-pdf-app/build/index.html",
     "main.e6c13ad2.css.map": "/checklist-pdf-app/build/static/css/main.e6c13ad2.css.map",
-    "main.8c9a6918.js.map": "/checklist-pdf-app/build/static/js/main.8c9a6918.js.map",
+    "main.ec6df2a9.js.map": "/checklist-pdf-app/build/static/js/main.ec6df2a9.js.map",
     "239.8973554e.chunk.js.map": "/checklist-pdf-app/build/static/js/239.8973554e.chunk.js.map",
     "213.a2f9cb97.chunk.js.map": "/checklist-pdf-app/build/static/js/213.a2f9cb97.chunk.js.map",
     "732.58fd25de.chunk.js.map": "/checklist-pdf-app/build/static/js/732.58fd25de.chunk.js.map",
@@ -18,6 +18,6 @@
   },
   "entrypoints": [
     "static/css/main.e6c13ad2.css",
-    "static/js/main.8c9a6918.js"
+    "static/js/main.ec6df2a9.js"
   ]
 }
