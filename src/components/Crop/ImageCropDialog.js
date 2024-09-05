@@ -33,7 +33,7 @@ function ImageCropDialog({ imageSrc, onCropComplete, onClose }) {
             image={imageSrc}
             crop={crop}
             zoom={zoom}
-            aspect={4 / 3} // Puedes ajustar esta proporción
+            aspect={4 / 4} // Puedes ajustar esta proporción
             onCropChange={onCropChange}
             onZoomChange={onZoomChange}
             onCropComplete={onCropCompleteCallback}

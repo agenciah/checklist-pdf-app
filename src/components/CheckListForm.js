@@ -3,7 +3,6 @@ import ChecklistSection from './CheckListSection';
 import CommentsSection from './CommentsSection';
 import PDFGeneration from './PDFGeneration';
 import { Box, Button, Typography } from '@mui/material';
-
 import ImageCropDialog from './Crop/ImageCropDialog';
 
 function ChecklistForm() {
@@ -124,6 +123,10 @@ function ChecklistForm() {
           imageSrc={imageToCrop}
           onCropComplete={handleCropComplete}
           onClose={() => setImageToCrop(null)}
+          cropContainerStyle={{
+            width: '500px', // Ajusta esto para hacer la caja más grande
+            height: '400px'  // Puedes ajustar también el alto
+          }}
         />
       )}
 
