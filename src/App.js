@@ -8,10 +8,6 @@ function App() {
     <div style={{ backgroundColor: 'rgb(38, 169, 225)', minHeight: '100vh' }}>
       <AppBar position="static" style={{ backgroundColor: 'rgb(1, 98, 153)' }}>
         <Toolbar>
-          <img src={logo} alt="Agencia Habitat Logo" style={{ height: 40, marginRight: 15 }} />
-          <Typography variant="h6" style={{ color: 'white', flexGrow: 1 }}>
-            Agencia Habitat
-          </Typography>
         </Toolbar>
       </AppBar>
       <Container>
